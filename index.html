@@ -1,122 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Bootstrap 101 Template</title>
-        <!-- Bootstrap -->
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Subir archivos usando PHP - jQuery - Bootstrap</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="text-center">
+        <h1>Subir archivos usando PHP - jQuery - Bootstrap</h1>
+        <form>
+            <div class="form-group">
+                <label for="exampleInputFile">Subir archivo</label>
+                <center><input type="file"  id="fileToUpload" onchange="upload_image();"></center>
+                <p class="help-block">Seleccion un archivo.</p>
+            </div>
+            <div class="upload-msg"></div><!--Para mostrar la respuesta del archivo llamado via ajax -->
 
-        <!-- Custom styles for this template -->
-        <link href="css/jumbotron-narrow.css" rel="stylesheet">
-    </head>
-    <body>
+        </form>
+    </div>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script>
+    function upload_image(){//Funcion encargada de enviar el archivo via AJAX
+        $(".upload-msg").text('Cargando...');
+        var inputFileImage = document.getElementById("fileToUpload");
+        var file = inputFileImage.files[0];
+        var data = new FormData();
+        data.append('fileToUpload',file);
 
-    <div class="container">
-        <div class="header clearfix">
-            <h3 class="text-muted">
-                Subir archivos
-            </h3>
-        </div>
+        /*jQuery.each($('#fileToUpload')[0].files, function(i, file) {
+            data.append('file'+i, file);
+        });*/
 
-        <div class="mensaje">
-            &nbsp;
-        </div>
-
-        <div class="jumbotron">
-            <h1>Subir archivos</h1>
-            <form enctype="multipart/form-data" class="formulario">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="input-group">
-                            <label class="input-group-btn">
-                                <span class="btn btn-default fake-file">
-                                    Buscar archivo
-                                    <input type="file" class="archivo hidden" name="archivoa" id="archivo" />
-                                </span>
-                            </label>
-                            <input type="text" class="form-control fake-file-label" readonly="readonly" />
-                        </div>
-                    </div>
-                </div><!-- /.row -->
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        &nbsp;
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                        <button type="button" class="btn btn-primary subir-archivo">Primary</button>
-                    </div>
-                </div><!-- /.row -->
-            </form>
-        </div>
-
-    </div> <!-- /container -->
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script !src="">
-        $.fn.nombreArchivo = function() {
-            $(this).change(function () {
-                $('.fake-file-label').val($(this).val().replace(/C:\\fakepath\\/i, ''));
-            });
-        };
-
-        function showMessage(message){
-            $(".mensaje").html("").show();
-            $(".mensaje").html(message);
-        }
-
-        $(document).ready(function() {
-            $('[type=file]').nombreArchivo();
-
-            //al enviar el formulario
-            $('.subir-archivo').click(function(){
-
-                //información del formulario
-                var formData = new FormData($(".formulario")[0]);
-                var message = "";
-                //hacemos la petición ajax
-                $.ajax({
-                    url: 'http://132.248.55.5/JMDL/upload.php',
-                    type: 'POST',
-                    // Form data
-                    //datos del formulario
-                    data: formData,
-                    //necesario para subir archivos via ajax
-                    cache: false,
-                    contentType: false,
-                    processData: false,
-                    //mientras enviamos el archivo
-                    beforeSend: function(){
-                        message = $("<span class='before'>Subiendo la imagen, por favor espere...</span>");
-                        showMessage(message)
-                    },
-                    //una vez finalizado correctamente
-                    success: function(data){
-                        message = $("<span class='alert alert-success'>La imagen ha subido correctamente.</span>");
-                        showMessage(message);
-                        if(isImage(fileExtension))
-                        {
-                            $(".showImage").html("<img src='files/"+data+"' />");
-                        }
-                    },
-                    //si ha ocurrido un error
-                    error: function(){
-                        message = $("<span class='alert alert-danger'>Ha ocurrido un error.</span>");
-                        showMessage(message);
-                    }
-                });
-            });
+        $.ajax({
+            url: "http://132.248.55.5/JMDL/upload.php",        // Url to which the request is send
+            type: "POST",             // Type of request to be send, called as method
+            data: data, 			  // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+            contentType: false,       // The content type used when sending data to the server.
+            cache: false,             // To unable request pages to be cached
+            processData:false,        // To send DOMDocument or non processed data file it is set to false
+            success: function(data)   // A function to be called if request succeeds
+            {
+                $(".upload-msg").html(data);
+                window.setTimeout(function() {
+                    $(".alert-dismissible").fadeTo(500, 0).slideUp(500, function(){
+                        $(this).remove();
+                    });	}, 5000);
+            }
         });
-    </script>
-    </body>
+
+    }
+</script>
+</body>
 </html>
