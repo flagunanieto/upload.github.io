@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ab2c089-8ed4-4e4e-9218-649f7fe08170" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/css/ie10-viewport-bug-workaround.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/jumbotron-narrow.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/ie-emulation-modes-warning.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/ie10-viewport-bug-workaround.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/ie8-responsive-file-warning.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/jumbotron-narrow.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/jumbotron-narrow.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,11 +18,21 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="777">
-              <caret line="80" column="66" lean-forward="true" selection-start-line="80" selection-start-column="66" selection-end-line="80" selection-end-column="66" />
+            <state relative-caret-position="284">
+              <caret line="74" column="23" selection-start-line="74" selection-start-column="23" selection-end-line="74" selection-end-column="23" />
               <folding>
-                <element signature="e#3305#3311#0" expanded="true" />
+                <element signature="e#1032#1038#0" expanded="true" />
+                <element signature="e#1921#1927#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jumbotron-narrow.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/jumbotron-narrow.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="47" column="1" selection-start-line="47" selection-start-column="1" selection-end-line="47" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -44,10 +50,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/css/jumbotron-narrow.css" />
         <option value="$PROJECT_DIR$/js/ie-emulation-modes-warning.js" />
         <option value="$PROJECT_DIR$/css/ie10-viewport-bug-workaround.css" />
         <option value="$PROJECT_DIR$/js/ie10-viewport-bug-workaround.js" />
+        <option value="$PROJECT_DIR$/css/jumbotron-narrow.css" />
         <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
@@ -57,6 +63,9 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpServers">
+    <servers />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
@@ -120,12 +129,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1538002211168</updated>
-      <workItem from="1538002212762" duration="1631000" />
+      <workItem from="1538002212762" duration="4422000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1631000" />
+    <option name="totallyTimeSpent" value="4422000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -163,13 +172,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/css/jumbotron-narrow.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="859">
-          <caret line="78" column="1" selection-start-line="78" selection-start-column="1" selection-end-line="78" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/ie-emulation-modes-warning.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="850">
@@ -200,15 +202,23 @@
     <entry file="file://$PROJECT_DIR$/css/ie8-responsive-file-warning.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/jumbotron-narrow.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="47" column="1" selection-start-line="47" selection-start-column="1" selection-end-line="47" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/ie8-responsive-file-warning.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="777">
-          <caret line="80" column="66" lean-forward="true" selection-start-line="80" selection-start-column="66" selection-end-line="80" selection-end-column="66" />
+        <state relative-caret-position="284">
+          <caret line="74" column="23" selection-start-line="74" selection-start-column="23" selection-end-line="74" selection-end-column="23" />
           <folding>
-            <element signature="e#3305#3311#0" expanded="true" />
+            <element signature="e#1032#1038#0" expanded="true" />
+            <element signature="e#1921#1927#0" expanded="true" />
           </folding>
         </state>
       </provider>
